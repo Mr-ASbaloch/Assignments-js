@@ -1,0 +1,26 @@
+Dom
+DOM stand for data object model
+it is a tree like stucture 
+the tree structure is made up of nodes and each node is a html element
+html element may be html tags just like the heading ,paragraph  ,attribute 
+dom is used to represent interactive and dynamic content
+
+
+
+access the html  element using the dom 
+
+1: get  the html element bye id  name
+
+let text = document.getElementById  ("id")
+  
+  we can also change the html element attribute styles using innerHTML keyword
+
+2: get element by class name
+
+let text = document.getElementByClassName ("class")
+
+class give us the array of classes that can be access by giving indexes
+so we can change the class attribute by specifying the index of the class
+
+
+
