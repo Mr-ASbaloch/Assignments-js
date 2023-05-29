@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+</body>
+</html>
+
+<html> is the child of the document...<head> and <body> are the
+children of <html>...<div> is the child of <body>...two <p>'s are the children of <div>...each
+text node is the child of a <p>. Conversely, the document is the parent of <html>, <html> is
+the parent of <head> and <body>, <head> is the parent of <title>, <title> is the parent of a
+text node, and so on. Nodes with the same parent are known as siblings. So, <head> and
+<body> are siblings because < html> is the parent of both. The two <p>'s are siblings because
+<div> is the parent of both.
+Starting at the bottom of the chart, the text "Nor to this." is a child of <p>, which is a child
+of <div>, which is a child of <body>, which is a child of <html>, which is a child of the
+document.
+Now look at this markup.
+<p>This is <em>important</em>!</p>
+If you made a chart for this paragraph, you might think that all the text is a child of the <p>
+node. But remember, every node that is enclosed by another node is the child of the node that
+encloses it. Since the text node "important" is enclosed by the element node <em>, this
+particular text node is the child of <em>, not <p>. The text nodes "This is " and "!" as well as
+the element node <em> are siblings, because they're all enclosed by <p>. They're all children
+of <p>.
