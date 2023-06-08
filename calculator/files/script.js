@@ -44,75 +44,72 @@ function calculate() {
     }
   }
   
-
-// function calculate() {
-//     var resultElement = document.getElementById("result");
-//     var resultValue = resultElement.value;
+  // Trigonometric functions
+function sin() {
+    var angle = parseFloat(document.getElementById("result").value);
+    var result = Math.sin(angle);
+    document.getElementById("result").value = result;
+  }
   
-//     // Perform your calculation using the resultValue
-//     var calculatedResult = eval(resultValue); // Using eval to evaluate the expression
+  function cos() {
+    var angle = parseFloat(document.getElementById("result").value);
+    var result = Math.cos(angle);
+    document.getElementById("result").value = result;
+  }
   
-//     // Display the calculated result
-//     resultElement.value = calculatedResult;
+  function tan() {
+    var angle = parseFloat(document.getElementById("result").value);
+    var result = Math.tan(angle);
+    document.getElementById("result").value = result;
+  }
 
-   
+
+  // Function to calculate factorial
+  var num;
+function factorial(num) {
+    if (num === 0 || num === 1) {
+      return 1;
+    } else {
+      return num * factorial(num - 1);
+    }
+  }
+  
+  // Function to calculate square
+  function square() {
+    var number = parseFloat(document.getElementById("result").value);
+    var result = Math.pow(number, 2);
+    document.getElementById("result").value = result;
+  }
+  
+  // Function to calculate logarithm
+  function logarithm() {
+    var number = parseFloat(document.getElementById("result").value);
+    var result = Math.log(number);
+    document.getElementById("result").value = result;
+  }
+  
+  // Function to append number to the result field
+  function appendNumber(num) {
+    document.getElementById("result").value += num;
+  }
+
+  // Function to convert degrees to radians
+
+
+  // Add event listener to the button
+  document.getElementById("toggleButton").addEventListener("click", toggleFile);
+  
+  // Modified appendNumber() function with degree conversion
+//   function appendNumber(num) {
+//     var angle = parseFloat(document.getElementById("result").value);
+//     angle += num;
+//     document.getElementById("result").value = angle;
+    
+//     var radians = toRadians(angle);
+//     console.log("Angle in radians:", radians);
 //   }
   
-
-
-
-// function calculate() {
-//   let result = document.getElementById("result").value = eval ("" + result)
-
-//   // Try-Catch concept comes in Error-Handling Concept
-
-//   try {
-//     // We write code in try in which chances of error are greater.
-//     let answer = eval(result);
-//     document.getElementById("result").value = answer;
-//   } catch (error) {
-//     console.log("error : " + error);
-//     document.getElementById("result").value = "Error";
-//   }
-// }
-
-// // Get the input and output elements
-// var inputElement = document.querySelector('input[type="text"]');
-// var outputElement = document.querySelector('input[type="button"][value="="]');
-
-// // Attach event listener to the output element (= button)
-// outputElement.addEventListener('click', calculate);
-
-// // Attach event listeners to all the number buttons (0-9)
-// var numberButtons = document.querySelectorAll('input[type="button"][value^="0"], input[type="button"][value="."]');
-// numberButtons.forEach(function(button) {
-//   button.addEventListener('click', function() {
-//     var currentValue = inputElement.value;
-//     var buttonValue = this.value;
-//     inputElement.value = currentValue + buttonValue;
-//   });
-// });
-
-// // Attach event listeners to the AC and C buttons
-// var acButton = document.querySelector('input[type="button"][value="AC"]');
-// acButton.addEventListener('click', function() {
-//   inputElement.value = '';
-// });
-
-// var cButton = document.querySelector('input[type="button"][value="C"]');
-// cButton.addEventListener('click', function() {
-//   var currentValue = inputElement.value;
-//   inputElement.value = currentValue.slice(0, -1);
-// });
-
-// // Function to evaluate and display the result
-// function calculate() {
-//   var expression = inputElement.value;
-
-//   try {
-//     var result = eval(expression);
-//     inputElement.value = result;
-//   } catch (error) {
-//     inputElement.value = 'Error';
-//   }
-// }
+  
+  
+ 
+  

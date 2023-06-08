@@ -10,6 +10,7 @@
   <!-- Font awesome theme link  -->
   <script src="https://kit.fontawesome.com/f6113a8105.js" crossorigin="anonymous"></script>
   <title>Calculator</title>
+  <script src="./script.js"></script>
 </head>
 
 <body>
@@ -20,52 +21,60 @@
     </h1> -->
   <div class=" w-[60%] mx-60 my-20 ">
     <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-16 w-[50%] rounded-t-lg  bg-lime-100">
-      <input type="text" placeholder="0" dir="rtl"
-        class="font-black bg-transparent text-right focus:outline-none  w-[100%] h-16" />
+      <input type="text" placeholder="0"  id="result"
+        class="font-black bg-transparent text-right focus:outline-none  w-[100%] h-16"  />
     </div>
 
     <div class="bg-gradient-to-r from-indigo-100  w-[60%]">
       <div>
-        <input type="button" value="7" class="font-bold text-orange-500 cursor-pointer px-10 py-5" />
-        <input type="button" value="8" class="font-bold text-orange-500 px-10 py-5" />
-        <input type="button" value="9" class="font-bold text-orange-500 px-10 py-5" />
-        <i class="fa-solid fa-rotate font-bold px-10 py-5"></i>
+        <input type="button" value="7" onclick="appendNumber(7)" class="font-bold text-orange-500 cursor-pointer px-10 py-5" />
+        <input type="button" value="8" onclick="appendNumber(8)" class="font-bold text-orange-500 px-10 py-5" />
+        <input type="button" value="9" onclick="appendNumber(9)" class="font-bold text-orange-500 px-10 py-5" />
+        <input type="button" value="=" onclick="calculate()" class="font-bold px-10 py-5" />
       </div>
       <div>
-        <a href="./index.html">
+       
             <i
+            id="toggleButton"
             class="fa-solid fa-chevron-right font-bold px-10 py-5 bg-slate-400  rounded-br-3xl rounded-tr-3xl"></i>
-           </a>
-        <input type="button" value="4" class="font-bold px-10 py-5" />
-        <input type="button" value="5" class="font-bold px-10 py-5" />
-        <input type="button" value="X" class="font-bold px-10 py-5" />
+         
+        <input type="button" value="4" onclick="appendNumber(4)"  class="font-bold px-10 py-5" />
+        <input type="button" value="5" onclick="appendNumber(5)"  class="font-bold px-10 py-5" />
+        <input type="button" value="Log" onclick="logarithm()" class="font-bold px-10 py-5" />
       
     </div>
       <div>
-        <input type="button" value="1" class="font-bold px-10 py-5" />
-        <input type="button" value="2" class="font-bold px-10 py-5" />
-        <input type="button" value="3" class="font-bold px-10 py-5" />
-        <input type="button" value="X!" class="font-bold px-10 py-5" />
+        <input type="button" value="1" onclick="appendNumber(1)" class="font-bold px-10 py-5" />
+        <input type="button" value="2" onclick="appendNumber(2)" class="font-bold px-10 py-5" />
+        <input type="button" value="3" onclick="appendNumber(3)" class="font-bold px-10 py-5" />
+        <input type="button" value="X!" onclick="factorial('')" class="font-bold px-10 py-5" />
       
       </div>
       <div>
-        <input type="button" value="AC" class="font-bold px-10 py-5" />
-        <input type="button" value="C" class="font-bold px-10 py-5" />
-        <input type="button" value="0" class="font-bold px-8 py-5 " />
-        <input type="button" value="Cos" class="font-bold px-8 py-5" />
+        <input type="button" value="AC" onclick="clearResult('')" class="font-bold px-10 py-5" />
+        <input type="button" value="C" onclick="delResult('')" class="font-bold px-10 py-5" />
+        <input type="button" value="0" onclick="appendNumber(0)" class="font-bold px-8 py-5 " />
+        <input type="button" value="X2" onclick="square()" class="font-bold px-8 py-5" />
 
        
       </div>
       <div>
-        <input type="button" value="Sin" class="font-bold px-8 py-5" />
-        <input type="button" value="Cos" class="font-bold px-8 py-5" />
-        <input type="button" value="Tan" class="font-bold px-8 py-5" />
-        <input type="button" value="deg" class="font-bold px-8 py-5" />
+        <input type="button" value="Sin"  onclick="sin()"  class="font-bold px-8 py-5" />
+        <input type="button" value="Cos"  onclick="cos()"  class="font-bold px-8 py-5" />
+        <input type="button" value="Tan"  onclick="cos()"  class="font-bold px-8 py-5" />
+        <input type="button" value="deg"  onclick="toRadians()" class="font-bold px-8 py-5" />
         
-     
-
       </div>
     </div>
+    <script>
+     
+
+    // Add event listener to the button
+    document.getElementById("toggleButton").addEventListener("click", toggleFile);
+    function toggleFile() {
+      window.open("index.html", "_self");
+    }
+    </script>
   </div>
 </body>
 
