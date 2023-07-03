@@ -1,0 +1,23 @@
+ 1- what is asynchronous in js
+
+In JavaScript, asynchronous refers to the ability of the code
+to execute non-blocking operations. When an operation is asynchronous, 
+it means that it can start executing, and the program can continue with
+other tasks without waiting for its completion. JavaScript achieves this behavior 
+through various mechanisms,
+ such as callbacks, promises, and async/await.
+
+
+ 3- why do we need asynchronous in JavaScript
+
+ Dependency Management: Asynchronous patterns like callbacks, promises, and async/await provide 
+ effective mechanisms for managing dependencies between operations. They enable you to express 
+ and handle dependencies, ensuring that code execution occurs in the correct order, even when 
+ dealing with multiple asynchronous operations.Overall, asynchronous programming is essential
+  for building performant, responsive, and scalable applications.
+
+
+
+5- challenge of the JavaScript
+Better performance 
+Prepare for the future
