@@ -1,82 +1,64 @@
-// function validstion() {
-//   let name = document.getElementById("name");
-//   let age = document.getElementById("name");
-//   let address = document.getElementById("name");
-//   let email = document.getElementById("name");
+function addData(params) {
+  let name = document.getElementById("name").value;
+  let age = document.getElementById("age").value;
+  let address = document.getElementById("address").value;
+  let email = document.getElementById("email").value;
 
-//   if (name == "") {
-//     alert("name is required");
-//     return false;
-//   }
-//   if (age == "") {
-//     alert("age is required");
-//     return false;
-//   } else if (age < 1) {
-//     alert("age must be between 1 and greater than zero");
-//     return false;
-//   }
-//   if (address == "") {
-//     alert("address is required");
-//     return false;
-//   }
+  let formData = {
+    name: name,
+    age: age,
+    address: address,
+    email: email,
+  };
 
-//   if (email == "") {
-//     alert("email is required");
-//     return false;
-//   }
-//   return true;
-// }
+  //   add data in object form  in json format
 
-// let name= document.getElementById("name").Value; 
-// let age= document.getElementById("age").value 
-// let address= document.getElementById("address").value 
-// let email= document.getElementById("email").value 
-// let recordList;
-// recordList.push({
-//     name :  name,
-//     age:age,
-//     address : address,
-//     email : email
-    
-// })
-// localStorage.setItem( "recordList", JSON.stringify(recordList) )
+  let jsonData = JSON.stringify(formData);
 
+  // sending data to local storage
 
-var form = document.querySelector('form');
+  localStorage.setItem("userData", jsonData);
 
-// Add an event listener to the form on submit
-form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting
+  document.querySelector("form").submit();
 
-    // Get the input values
-    var name = document.getElementById('name').value;
-    var age = document.getElementById('age').value;
-    var address = document.getElementById('address').value;
-    var email = document.getElementById('email').value;
+  // document.querySelector(form).reset();
+  alert("thankx you so much!");
+}
 
-    // Create an object to store the form data
-    var formData = {
-        name: name,
-        age: age,
-        address: address,
-        email: email
-    };
+function showData(params) {
+  var jsonData = localStorage.getItem("userData");
 
-    // Check if localStorage is supported
-    if (typeof(Storage) !== 'undefined') {
-        // Retrieve the existing data from localStorage
-        var existingData = JSON.parse(localStorage.getItem('formData')) || [];
+  // Parse the JSON string into an object
+  var formData = JSON.parse(jsonData);
 
-        // Add the new form data to the existing data
-        existingData.push(formData);
+  // Get the table body element
+  var tableBody = document.getElementById("recordBody");
 
-        // Save the updated data back to localStorage
-        localStorage.setItem('formData', JSON.stringify(existingData));
+  // Create a new table row
+  var newRow = document.createElement("tr");
 
-        // Optionally, you can display a success message or perform other actions
-        console.log('Form data saved successfully.');
-    } else {
-        // localStorage is not supported
-        console.log('Sorry, localStorage is not supported in your browser.');
-    }
-});
+  // Create and populate table cells
+  var nameCell = document.createElement("td");
+  nameCell.textContent = formData.name;
+
+  var ageCell = document.createElement("td");
+  ageCell.textContent = formData.age;
+
+  var addressCell = document.createElement("td");
+  addressCell.textContent = formData.address;
+
+  var emailCell = document.createElement("td");
+  emailCell.textContent = formData.email;
+
+  // Append the cells to the row
+  newRow.appendChild(nameCell);
+  newRow.appendChild(ageCell);
+  newRow.appendChild(addressCell);
+  newRow.appendChild(emailCell);
+
+  // Append the row to the table body
+  tableBody.appendChild(newRow);
+
+  alert("successfully shown")
+}
+

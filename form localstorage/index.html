@@ -17,20 +17,25 @@
 </head>
 
 <body>
+
+    <a href="./other.html">other</a>
     <h1>users details</h1>
 
     <section>
         <form action="">
             <label for="name">Name :</label>
-            <input type="text" value="name" required id="name">
+            <input type="text"  required  id="name">
             <label for="name">Age :</label>
-            <input type="number" value;="name" required id="age">
+            <input type="number"  required id="age">
             <label for="name">address :</label>
-            <input type="text" name="name" required id="address">
+            <input type="text"  required id="address" >
             <label for="name">email :</label>
-            <input type="email" name="name" required id="email">
-            <button value="submit">Submit</button>
+            <input type="email"  required id="email" >
+            <button value="submit" onclick="addData()">Submit</button>
+            <button value="showData" onclick="showData()">showData</button>
+            <button value="showData" onclick="clearData()">clear data</button>
         </form>
+        
     </section>
     <section>
         <table>
@@ -41,8 +46,8 @@
                 <th>address </th>
                 <th>email </th>
             </tr>
-            <tbody>
-                <tr>
+            <tbody id="recordBody">
+                <tr >
                     <td>1</td>
                     <td>1</td>
                     <td>1</td>
