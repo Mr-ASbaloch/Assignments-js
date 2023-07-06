@@ -59,12 +59,11 @@ form button {
     background-color: blue;
     color: white;
     display: block;
-    margin: 5px auto ;
+    margin: 10px auto ;
     width: 50%;
     height: max-content;
     padding: 5px;
     cursor: pointer;
-
     border-radius: 5px;
 }
 
@@ -100,14 +99,21 @@ table td {
     color: blueviolet;
 }
 
-@media  only screen and (max-width: 320px){
+@media  only screen and (max-width: 375px){
+ /* session{
+    display: block;
+    
+ } */
+  
+ 
  form {
-    width: 100%;
-    margin: 0px !important;
+    /* margin-left: 10px; */
+    width: 375px;
+    /* margin: 1px auto !important; */
  }
 table{
-    width: 75%;
-   margin: 0px !important;
+    width: 375px;
+    /* margin: 1px auto !important; */
 } 
 form button{
     display: block;
@@ -115,6 +121,39 @@ form button{
     margin: 5px auto;
     text-align: center;
     border-radius: 5px;
+    
 }
 
 }
+@media  only screen and (max-width: 425px){
+    session{
+        display: block;
+        margin: 0px !important;
+     } 
+     .container{
+        display: block;
+        margin: 0px !important;
+     }
+    form {
+       width: 425;
+       /* margin:2px auto; */
+    }
+  
+    
+   table{
+       width: 425px; 
+      margin: 1px auto !important; 
+   } 
+   form button{
+       display: block;
+       width: 70%;
+       margin: 5px auto;
+       text-align: center;
+       border-radius: 5px;
+   }
+   .container{
+    display: block;
+    margin: 0px !important;
+ }
+   
+   }
