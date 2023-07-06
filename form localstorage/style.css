@@ -1,0 +1,79 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   background-color: rgb(201, 210, 228);
+   text-transform: capitalize;
+
+}
+body h1 ,h3 {
+    text-align: center;
+    text-decoration: solid underline ;
+    text-transform: capitalize;
+    color: crimson;
+    
+    
+}
+form{
+    /* border: 1px solid black; */
+    display: block;
+    width: 300px;
+    height: max-content;
+    background-color: rgba(54, 52, 52, 0.677);
+    border-radius: 5px;
+    margin: 25px auto;
+    margin-left: 5%;
+}
+form label{
+    display: block;
+    font-size: large;
+    color:white;
+    padding: 5px;
+    margin-left: 3px;
+    
+}
+form input{
+    width: 80%;
+    padding: 8px;
+    margin: 14px ;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    /* border-bottom: 1px solid rgb(228, 14, 14); */
+    text-align: center;
+    margin-top: 1px;
+
+}
+form button{
+    background-color: blue;
+    color: white;
+    display: block;
+    margin:10px auto;
+    width: 25%;
+    height: max-content;
+    padding: 5px;
+    
+}
+
+
+
+table{
+    /* border: 1px solid black; */
+    /* display: block; */
+    width: 300px;
+    height: max-content;
+    background-color: rgba(54, 52, 52, 0.677);
+    border-radius: 5px;
+    margin: 2px auto;
+  
+    
+}
+table th{
+    color: beige;
+    border: 1px solid black;
+}
+
+table td {
+    text-align: center;
+    
+}
