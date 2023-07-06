@@ -1,64 +1,100 @@
-function addData(params) {
-  let name = document.getElementById("name").value;
-  let age = document.getElementById("age").value;
-  let address = document.getElementById("address").value;
-  let email = document.getElementById("email").value;
 
-  let formData = {
-    name: name,
-    age: age,
-    address: address,
-    email: email,
-  };
+function addData() {
+    var name = document.getElementById("name").value;
+    var age = document.getElementById("age").value;
+    var address = document.getElementById("address").value;
+    var email = document.getElementById("email").value;
 
-  //   add data in object form  in json format
+    if (age == "" || name == "" || address == "" || email == "") {
+            alert("please fill all fields");
+            return false;
+          }
+          if (age < 0) {
+            alert("age must be greater than zero");
+            return false;
+          }
 
-  let jsonData = JSON.stringify(formData);
+    var formData = {
+      name: name,
+      age: age,
+      address: address,
+      email: email
+    };
 
-  // sending data to local storage
+    var existingData = localStorage.getItem("formData");
+    var dataArray = existingData ? JSON.parse(existingData) : [];
 
-  localStorage.setItem("userData", jsonData);
+    for (var i = 0; i < dataArray.length; i++) {
+        if (dataArray[i].name === name) {
+          alert("User name already exists. Please choose a different name.");
+          return false;
+        }
+      }
+    dataArray.push(formData);
+    localStorage.setItem("formData", JSON.stringify(dataArray));
 
-  document.querySelector("form").submit();
+    // document.getElementById("myForm").reset();
 
-  // document.querySelector(form).reset();
-  alert("thankx you so much!");
-}
+    alert("Data saved successfully!");
 
-function showData(params) {
-  var jsonData = localStorage.getItem("userData");
 
-  // Parse the JSON string into an object
-  var formData = JSON.parse(jsonData);
+    // Prevent form submission
+    return false;
+  }
 
-  // Get the table body element
-  var tableBody = document.getElementById("recordBody");
+  function showData() {
+    var existingData = localStorage.getItem("formData");
+    var dataArray = existingData ? JSON.parse(existingData) : [];
+    
 
-  // Create a new table row
-  var newRow = document.createElement("tr");
+    var tableBody = document.getElementById("recordBody");
+    tableBody.innerHTML = ""; // Clear existing table data
 
-  // Create and populate table cells
-  var nameCell = document.createElement("td");
-  nameCell.textContent = formData.name;
+    for (var i = 0; i < dataArray.length; i++) {
+      var userData = dataArray[i];
 
-  var ageCell = document.createElement("td");
-  ageCell.textContent = formData.age;
+      var newRow = document.createElement("tr");
 
-  var addressCell = document.createElement("td");
-  addressCell.textContent = formData.address;
+      var nameCell = document.createElement("td");
+      nameCell.textContent = userData.name;
 
-  var emailCell = document.createElement("td");
-  emailCell.textContent = formData.email;
+      var ageCell = document.createElement("td");
+      ageCell.textContent = userData.age;
 
-  // Append the cells to the row
-  newRow.appendChild(nameCell);
-  newRow.appendChild(ageCell);
-  newRow.appendChild(addressCell);
-  newRow.appendChild(emailCell);
+      var addressCell = document.createElement("td");
+      addressCell.textContent = userData.address;
 
-  // Append the row to the table body
-  tableBody.appendChild(newRow);
+      var emailCell = document.createElement("td");
+      emailCell.textContent = userData.email;
 
-  alert("successfully shown")
-}
+      newRow.appendChild(nameCell);
+      newRow.appendChild(ageCell);
+      newRow.appendChild(addressCell);
+      newRow.appendChild(emailCell);
 
+      tableBody.appendChild(newRow);
+    }
+    alert("display successfully")
+
+    var counterDiv = document.getElementById("counter");
+  counterDiv.textContent = "Total Users: " + dataArray.length;
+    return true;
+
+    
+  }
+
+  function delData(index) {
+    
+    if (localStorage.getItem("formData") === null) {
+        formData = [];
+    } else {
+        formData =JSON.parse( localStorage.getItem("formData"));
+    }
+    formData.splice(index, 1);
+  localStorage.setItem("formData", JSON.stringify(formData));
+  alert("deleted successfully")
+  window.location.reload();
+//   document.write ("no data found");
+
+ 
+  }

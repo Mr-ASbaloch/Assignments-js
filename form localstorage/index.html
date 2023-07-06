@@ -18,46 +18,46 @@
 
 <body>
 
-    <a href="./other.html">other</a>
+    
     <h1>users details</h1>
 
-    <section>
-        <form action="">
-            <label for="name">Name :</label>
-            <input type="text"  required  id="name">
-            <label for="name">Age :</label>
-            <input type="number"  required id="age">
-            <label for="name">address :</label>
-            <input type="text"  required id="address" >
-            <label for="name">email :</label>
-            <input type="email"  required id="email" >
-            <button value="submit" onclick="addData()">Submit</button>
-            <button value="showData" onclick="showData()">showData</button>
-            <button value="showData" onclick="clearData()">clear data</button>
-        </form>
-        
-    </section>
-    <section>
-        <table>
-            <h3>user data</h3>
-            <tr>
-                <th>name </th>
-                <th>age </th>
-                <th>address </th>
-                <th>email </th>
-            </tr>
-            <tbody id="recordBody">
-                <tr >
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-            </tbody>
+    <div class="container" style="display: flex; margin: 10px; flex-wrap: wrap;">
+        <section>
+            <h3> Data entry</h3>
+            <form action="">
+                <label for="name">Name :</label>
+                <input type="text"  required  id="name">
+                <label for="name">Age :</label>
+                <input type="number"  required id="age">
+                <label for="name">address :</label>
+                <input type="text"  required id="address" >
+                <label for="name">email :</label>
+                <input type="email"  required id="email" >
+                <button value="submit" onclick="addData()">Add user</button>
+                <button value="showData" onclick="showData()" style="background-color: #862B0D;">generate user list</button>
+                <button value="showData" onclick="delData()" style="background-color: #FF0060;">delete user</button>
+            </form>
             
+        </section>
+        <section>
+            <table>
+                <h3> data record</h3>
+                <div id="counter"></div>
 
-        </table>
-    </section>
+                <tr>
+                    <th>name </th>
+                    <th>age </th>
+                    <th>address </th>
+                    <th>email </th>
+                </tr>
+                <tbody id="recordBody">
+                    
+                </tbody>
+                
+    
+            </table>
+        </section>
+    </div>
 </body>
 
 </html>

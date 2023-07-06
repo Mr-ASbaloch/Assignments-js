@@ -1,41 +1,51 @@
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   background-color: rgb(201, 210, 228);
-   text-transform: capitalize;
+    /* background-color: rgb(201, 210, 228); */
+    /* background-image: linear-gradient(to left, #ffefba, #ffffff); */
+    text-transform: capitalize;
+    overflow:scroll;
 
 }
-body h1 ,h3 {
+
+body h1,
+h3 {
     text-align: center;
-    text-decoration: solid underline ;
+    text-decoration: solid underline;
     text-transform: capitalize;
     color: crimson;
-    
-    
+
+
 }
-form{
+
+form {
     /* border: 1px solid black; */
     display: block;
-    width: 300px;
+    width: 350px;
     height: max-content;
-    background-color: rgba(54, 52, 52, 0.677);
+    /* background-color: rgba(54, 52, 52, 0.677); */
     border-radius: 5px;
-    margin: 25px auto;
+    /* margin: 25px auto; */
     margin-left: 5%;
+    background-image: linear-gradient(to right, #efece4, #3E5151);
+    box-shadow: 5px 5px 5px rgb(140, 127, 127);
+  
 }
-form label{
+
+form label {
     display: block;
     font-size: large;
-    color:white;
+    color: #0C134F;
     padding: 5px;
     margin-left: 3px;
-    
+
 }
-form input{
+
+form input {
     width: 80%;
     padding: 8px;
-    margin: 14px ;
+    margin: 14px;
     outline: none;
     border: none;
     border-radius: 5px;
@@ -44,36 +54,67 @@ form input{
     margin-top: 1px;
 
 }
-form button{
+
+form button {
     background-color: blue;
     color: white;
     display: block;
-    margin:10px auto;
-    width: 25%;
+    margin: 5px auto ;
+    width: 50%;
     height: max-content;
     padding: 5px;
-    
+    cursor: pointer;
+
+    border-radius: 5px;
 }
 
 
 
-table{
-    /* border: 1px solid black; */
-    /* display: block; */
+table {
+   
+  
     width: 300px;
     height: max-content;
-    background-color: rgba(54, 52, 52, 0.677);
-    border-radius: 5px;
-    margin: 2px auto;
-  
-    
+    background-color: transparent;
+     border-radius : 5px;
+    margin: 10px 120px;
+
+
 }
-table th{
-    color: beige;
+
+table th {
+    color: black;
     border: 1px solid black;
 }
 
+
 table td {
     text-align: center;
-    
+    color: blue;
+    text-transform: lowercase;
+    border: 1px solid black;
+
+}
+#counter{
+    text-align: center;
+    color: blueviolet;
+}
+
+@media  only screen and (max-width: 320px){
+ form {
+    width: 100%;
+    margin: 0px !important;
+ }
+table{
+    width: 75%;
+   margin: 0px !important;
+} 
+form button{
+    display: block;
+    width: 70%;
+    margin: 5px auto;
+    text-align: center;
+    border-radius: 5px;
+}
+
 }
